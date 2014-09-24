@@ -2,4 +2,20 @@
     max-width: 100%;
     max-height: 100%;
     display: inline-block;
+    @include transition(.5s);
+    .show-image & {
+        @include opacity(0);
+    }
+}
+
+.line-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    position: absolute;
+    @include opacity(0);
+    @include transition(.5s);
+    .show-image & {
+        @include opacity(1);
+    }
 }
