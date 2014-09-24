@@ -60,7 +60,8 @@ SVGElem.prototype.drawing = function() {
     var svg = this,
         progress = svg.currentFrame / svg.totalFrames;
     if (progress > 1) {
-        window.cancelAnimFrame(this.timeout);
+        svg.el.parentNode.className = svg.el.parentNode.className + ' show-image';
+        window.cancelAnimFrame(svg.timeout);
     } else {
         svg.currentFrame++;
         for (var i = 0; i < svg.path.length; i++) {
